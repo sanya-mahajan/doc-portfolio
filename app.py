@@ -24,6 +24,8 @@ with col2:
     🕒 **Visiting Hours:**
     - **Monday - Saturday**: 10:00 AM - 1:30 PM, 5:00 PM - 8:00 PM
     - **Sunday**: Closed
+
+    📞 **Contact Number**: [9419192109](tel:9419192109)
     """)
 
 # Google Maps Section
