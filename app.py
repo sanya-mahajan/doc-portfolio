@@ -52,7 +52,35 @@ for clinic, coord in locations.items():
     folium.Marker(coord, popup=clinic).add_to(m)
 
 # Render map
-st_folium(m, width=700, height=400)
+st_folium(m, width=300, height=200)
+
+st.header("🏥 Clinic Images")
+carousel_html = """
+<div id="clinicCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://via.placeholder.com/700x400?text=Clinic+1" class="d-block w-100" alt="Clinic 1">
+    </div>
+    <div class="carousel-item">
+      <img src="https://via.placeholder.com/700x400?text=Clinic+2" class="d-block w-100" alt="Clinic 2">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#clinicCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#clinicCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+"""
+
+st.markdown(
+    carousel_html,
+    unsafe_allow_html=True
+)
+
 
 # Footer
 st.write("© 2025 Dr. Manish Gupta. All rights reserved.")
