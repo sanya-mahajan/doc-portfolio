@@ -46,19 +46,27 @@ locations = {
 
 # Initialize map
 m = folium.Map(location=[32.73869234413952, 74.85254710980048], zoom_start=6)
+bounds = [coord for coord in locations.values()] 
+folium.FitBounds(bounds).add_to(m)
 
 # Add markers for clinics
 for clinic, coord in locations.items():
     folium.Marker(coord, popup=clinic).add_to(m)
 
 # Render map
-st_folium(m, width=300, height=200)
+st_folium(m, width=700, height=500)
 
 st.header("🏥 Clinic Images")
 carousel_html = """
 <div id="clinicCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
+      <img src="https://via.placeholder.com/700x400?text=Clinic+1" class="d-block w-100" alt="Clinic 1">
+    </div>
+    <div class="carousel-item">
+      <img src="https://via.placeholder.com/700x400?text=Clinic+2" class="d-block w-100" alt="Clinic 2">
+    </div>
+     <div class="carousel-item active">
       <img src="https://via.placeholder.com/700x400?text=Clinic+1" class="d-block w-100" alt="Clinic 1">
     </div>
     <div class="carousel-item">
