@@ -57,38 +57,36 @@ for clinic, coord in locations.items():
 st_folium(m, width=700, height=500)
 
 st.header("🏥 Clinic Images")
-carousel_html = """
-<div id="clinicCarousel" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://via.placeholder.com/700x400?text=Clinic+1" class="d-block w-100" alt="Clinic 1">
-    </div>
-    <div class="carousel-item">
-      <img src="https://via.placeholder.com/700x400?text=Clinic+2" class="d-block w-100" alt="Clinic 2">
-    </div>
-     <div class="carousel-item active">
-      <img src="https://via.placeholder.com/700x400?text=Clinic+1" class="d-block w-100" alt="Clinic 1">
-    </div>
-    <div class="carousel-item">
-      <img src="https://via.placeholder.com/700x400?text=Clinic+2" class="d-block w-100" alt="Clinic 2">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#clinicCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#clinicCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-"""
 
-st.markdown(
-    carousel_html,
-    unsafe_allow_html=True
-)
+# Clinic Images in a Grid Layout
+clinic_images = [
+    {
+        "url": "https://res.cloudinary.com/dy0nzogyx/image/upload/v1736591998/WhatsApp_Image_2025-01-11_at_3.54.05_PM_1_eogvxy.jpg",
+        "alt": "Clinic 1",
+    },
+    {
+        "url": "https://res.cloudinary.com/dy0nzogyx/image/upload/v1736591998/WhatsApp_Image_2025-01-11_at_3.54.04_PM_auwiqz.jpg",
+        "alt": "Clinic 2",
+    },
+    {
+        "url": "https://res.cloudinary.com/dy0nzogyx/image/upload/v1736591997/WhatsApp_Image_2025-01-11_at_3.54.04_PM_1_latfyp.jpg",
+        "alt": "Clinic 3",
+    },
+]
 
+image_width = 300
+image_height = 200
 
+# Create a grid layout with 3 columns
+cols = st.columns(3)
+
+for idx, clinic in enumerate(clinic_images):
+    with cols[idx % 3]:  # Dynamically assign images to columns
+        st.image(
+            clinic["url"],
+            caption=clinic["alt"],
+            width=image_width,
+            output_format="JPEG",
+        )
 # Footer
 st.write("© 2025 Dr. Manish Gupta. All rights reserved.")
