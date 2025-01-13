@@ -62,15 +62,15 @@ st.header("🏥 Clinic Images")
 clinic_images = [
     {
         "url": "https://res.cloudinary.com/dy0nzogyx/image/upload/v1736591998/WhatsApp_Image_2025-01-11_at_3.54.05_PM_1_eogvxy.jpg",
-        "alt": "Clinic 1",
+        "alt": "surgery room",
     },
     {
         "url": "https://res.cloudinary.com/dy0nzogyx/image/upload/v1736591998/WhatsApp_Image_2025-01-11_at_3.54.04_PM_auwiqz.jpg",
-        "alt": "Clinic 2",
+        "alt": "",
     },
     {
         "url": "https://res.cloudinary.com/dy0nzogyx/image/upload/v1736591997/WhatsApp_Image_2025-01-11_at_3.54.04_PM_1_latfyp.jpg",
-        "alt": "Clinic 3",
+        "alt": "",
     },
 ]
 
